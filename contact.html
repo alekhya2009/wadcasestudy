@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Skyway Airlines</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            background: url('https://images.pexels.com/photos/62623/wing-plane-flying-airplane-62623.jpeg?cs=srgb&dl=pexels-pixabay-62623.jpg&fm=jpg') no-repeat center center fixed;
+            background-size: cover;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            color: white;
+            margin-top: 20px;
+            font-size: 2.5em;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.5);
+            width: 100%;
+        }
+
+        .container {
+            padding: 40px;
+            margin-top: 40px;
+            max-width: 1200px;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .container h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .highlight {
+            background-color: #f8f8f8;
+            border-left: 5px solid #333;
+            padding: 10px 20px;
+            margin: 20px 0;
+            font-weight: bold;
+            text-align: left;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .section p {
+            line-height: 1.6;
+            color: #555;
+            text-align: left;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            padding: 10px;
+            margin: 10px 0;
+            width: 100%;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .contact-form button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .contact-form button:hover {
+            background-color: #555;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            width: 100%;
+        }
+
+        .footer a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .header {
+                font-size: 2rem;
+                padding: 20px;
+            }
+
+            .container {
+                margin-top: 20px;
+                padding: 20px;
+            }
+
+            .section h3 {
+                font-size: 1.5rem;
+            }
+
+            .highlight {
+                font-size: 1rem;
+                padding: 8px 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        Skyway Airlines - Contact Us
+    </div>
+
+    <div class="container">
+        <!-- Contact Information Section -->
+        <div class="section">
+            <h2>Contact Information</h2>
+            <p>If you have any questions, feel free to contact us. Our customer support team is available 24/7 to assist you with your needs.</p>
+
+            <div class="highlight">
+                <p><strong>Phone Number:</strong> +1 (800) 123-4567</p>
+                <p><strong>Email:</strong> support@skywayairlines.com</p>
+                <p><strong>Address:</strong> Cleartrip Pvt Ltd.,9th floor, Tower Embassy Tech Village,Devarabeesanahalli, ORR,Bangalore -560103
+</p>
+            </div>
+        </div>
+
+        <!-- Contact Form Section -->
+        <div class="section">
+            <h3>Send Us a Message</h3>
+            <form class="contact-form">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Your Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+
+        <!-- Customer Support Section -->
+        <div class="section">
+            <h3>Customer Support</h3>
+            <p>If you need immediate assistance, please don't hesitate to contact our customer support team. We're here to help!</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2025 Skyway Airlines. All rights reserved. <br> <a href="index.html">Back to Home</a></p>
+    </div>
+
+</body>
+
+</html>

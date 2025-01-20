@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skyway Airlines</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&family=Georgia&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            background: url('https://images.pexels.com/photos/62623/wing-plane-flying-airplane-62623.jpeg?cs=srgb&dl=pexels-pixabay-62623.jpg&fm=jpg') no-repeat center center fixed;
+            background-size: cover;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-top: 20px;
+            font-size: 2.5em;
+            font-family: 'Georgia', serif;
+        }
+
+        .login-icon {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            z-index: 1000;
+        }
+
+        .login-form-container {
+            display: none;
+            position: fixed;
+            top: 50px;
+            right: 10px;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .login-form-container.active {
+            display: block;
+        }
+
+        .booking-container {
+            margin-top: 100px;
+            width: 100%;
+            max-width: 1200px;
+            padding: 40px;
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .booking-container h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .booking-form input,
+        .booking-form select {
+            padding: 10px;
+            margin: 10px 0;
+            width: 100%;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .booking-form button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .booking-form button:hover {
+            background-color: #555;
+        }
+
+        #features {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+            width: 100%;
+            padding: 0 20px;
+            gap: 30px;
+        }
+
+        .feature {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            width: 30%;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #download {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 40px;
+            margin-top: 40px;
+            text-align: center;
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #download img {
+            max-width: 150px;
+        }
+
+        .sidebar {
+            width: 200px;
+            background-color: #333;
+            color: white;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: -200px;
+            padding: 20px;
+            box-sizing: border-box;
+            transition: left 0.3s ease;
+        }
+
+        .sidebar.active {
+            left: 0;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            margin: 15px 0;
+        }
+
+        .sidebar ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .sidebar ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .sidebar-toggle {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            cursor: pointer;
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            z-index: 1000;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="header">Skyway Airlines</h1>
+    <button class="sidebar-toggle">☰</button>
+
+    <div class="sidebar">
+        <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact us</a></li>
+        </ul>
+    </div>
+
+    <button class="login-icon">Login</button>
+
+    <div class="login-form-container">
+        <form id="login-form" class="auth-form">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <div class="booking-container">
+        <h2>Book Your Flight</h2>
+        <form class="booking-form">
+            <label for="origin">From:</label>
+            <select id="origin" name="origin" required>
+                <option value="Chennai">Chennai</option>
+                <option value="Cochin">Cochin</option>
+                <option value="Ahmedabad">Ahmedabad</option>
+            </select>
+            <label for="destination">To:</label>
+            <select id="destination" name="destination" required>
+                <option value="London">London</option>
+                <option value="Paris">Paris</option>
+                <option value="Tokyo">Tokyo</option>
+            </select>
+            <label for="date">Departure Date:</label>
+            <input type="date" id="date" name="date" required>
+            <button type="submit">Book Flight</button>
+        </form>
+    </div>
+
+    <div id="features">
+        <div class="feature">
+            <h3>Affordable Tickets</h3>
+            <p>Our airline offers the best prices on flight tickets to your destination.</p>
+        </div>
+        <div class="feature">
+            <h3>Excellent Service</h3>
+            <p>We prioritize customer satisfaction with top-notch service on every flight.</p>
+        </div>
+        <div class="feature">
+            <h3>Comfortable Travel</h3>
+            <p>Enjoy a comfortable and relaxing journey with our modern aircraft and amenities.</p>
+        </div>
+    </div>
+
+    <div id="download">
+        <h2>Download Our App Now</h2>
+        <p>Get our app for exclusive deals and faster booking!</p>
+        <p>Scan the QR code to download:</p>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/QR_code_for_mobile_English_Wikipedia.svg/1200px-QR_code_for_mobile_English_Wikipedia.svg.png" alt="QR Code">
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            var sidebar = document.querySelector('.sidebar');
+            var toggleButton = document.querySelector('.sidebar-toggle');
+            var loginIcon = document.querySelector('.login-icon');
+            var loginFormContainer = document.querySelector('.login-form-container');
+
+            toggleButton.addEventListener('click', () => {
+                sidebar.classList.toggle('active');
+            });
+
+            loginIcon.addEventListener('click', () => {
+                loginFormContainer.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+
+</html>
